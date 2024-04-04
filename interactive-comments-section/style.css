@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --width: 55%;
+}
+
+*{
+    margin: 0px;
+    padding: 0px
+}
+html{
+    height: 100%;
+}
+body{
+    background: hsl(228, 33%, 97%);
+    height: 100%;
+    box-sizing: border-box;
+    padding: 50px 0 50px 0;
+    font-size: 16px;
+    font-family: "Rubik";
+    font-weight: 400;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    .delete{
+        color: hsl(358, 79%, 66%);
+        font-weight: 500;
+        cursor: pointer;
+        &:before{
+            display: inline-block;
+            content: "";
+            background: url("./images/icon-delete.svg") 0 0 no-repeat;
+            background-size: contain;
+            width: 15px;
+            height: 10px;
+        }
+    }
+    .edit {
+        color: hsl(238, 40%, 52%);
+        font-weight: 500;
+        cursor: pointer;
+        &:before{
+            display: inline-block;
+            content: "";
+            background: url("./images/icon-edit.svg") 0 0 no-repeat;
+            background-size: contain;
+            width: 15px;
+            height: 10px;
+        }
+    }
+}
+
+.reply{
+    color: hsl(238, 40%, 52%);
+    font-weight: 500;
+    cursor: pointer;
+    &:before{
+        display: inline-block;
+        content: "";
+        background: url("./images/icon-reply.svg") 0 0 no-repeat;
+        background-size: contain;
+        width: 15px;
+        height: 10px;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    min-width: var(--width);
+    height: 100%;
+    align-items: center;
+    margin: auto 5% auto 5%;
+}
+#comment-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    gap: 10px;
+    align-items: center;
+}
+.card-wrapper {
+    width: 100%;
+}
+.card{
+    background: hsl(0, 0%, 100%);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    button {
+        background: hsl(238, 40%, 52%);
+        border-radius: 10px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        height: max-content;
+        width: max-content;
+        align-self: end;
+        margin: 0 10px 10px 0;
+    }
+}
+
+.vote-section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: hsl(228, 33%, 97%);
+    padding: 6px; 
+    height: max-content;
+    gap: 2px;
+    color: hsl(238, 40%, 52%);
+    width: 20px;
+    p{
+        margin: 4px 0 4px 0;
+        text-align: center;
+    }
+    div {
+        padding: 2px;
+        text-align: center
+    }
+}
+
+.card-content {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.card-header, .card-footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.avatar {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.card-body{
+    width: 100%;   
+    margin-left: 10px;
+}
+
+.user-detail {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    #name{
+        font-weight: 500;
+    }
+    #date{
+        color: hsl(211, 10%, 45%);
+    }
+}
+
+.card-text{
+    margin-top: 10px;
+    color: hsl(211, 10%, 45%);
+    p {
+        display: inline-block;
+        color: hsl(238, 40%, 52%);
+        font-weight: 500;
+    }
+}
+.editable {
+    padding: 20px; 
+    border: 1px solid hsl(238, 40%, 52%); 
+    outline: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.input-area{
+    max-width: 600px;
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin-top: 10px;
+    textarea {
+        flex: 2;
+        margin: 0 10px 0 10px;
+        min-height: 80px; 
+        border: 1px solid hsl(223, 19%, 93%);
+        resize: none;
+        color: hsl(211, 10%, 45%);
+    }
+    button {
+        flex: 1;
+        background: hsl(238, 40%, 52%);
+        border-radius: 10px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        height: max-content;
+    }
+}
+
+.rep-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+    gap: 10px;
+    & > div{
+        width: 80%;
+    }
+    &:before{
+        content: " ";
+        position: absolute;
+        top: 0px;
+        left: 10%;
+        width: 2px;
+        height: 100%;
+        background: hsl(223, 19%, 93%);
+    }
+}
+
+.modal-wrapper {
+    position: absolute;
+    background: hsla(211, 10%, 45%, 0.389);
+    width:100%;
+    height:100%;
+    top: 0;
+    .modal {
+        display: grid;
+        border-radius: 10px;
+        padding: 40px;
+        box-sizing: border-box;
+        width: 350px;
+        height: 250px;
+        position: absolute;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        background: hsl(0, 0%, 100%);
+        color: hsl(211, 10%, 45%);
+        h2 {
+            color: hsl(211, 10%, 45%);
+        }
+        .bt-section{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            button{
+                padding: 5px 20px 5px 20px;
+                text-align: center;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                color: hsl(0, 0%, 100%);
+                font-weight: 700;
+            }
+            #bt-no {
+                background: hsl(211, 10%, 45%);
+            }
+            #bt-yes {
+                background: hsl(358, 79%, 66%);
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+@media ( width <= 375.99px ){
+    .vote-section {
+        flex-direction: row;
+        width: max-content;
+        p{
+            margin: 4px 0 4px 0;
+            text-align: center;
+        }
+        div {
+            padding: 2px;
+            text-align: center
+        }
+    }
+    .rep-section{
+        & > div{
+            width: 90%;
+        }
+        &:before{
+            left: 5%;
+        }
+    }
+    .modal {
+        width: 90% !important;
+        left: auto !important;
+        margin: auto 5% auto 5%;
+    }    
+}
